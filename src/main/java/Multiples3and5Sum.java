@@ -4,7 +4,6 @@ public class Multiples3and5Sum {
         System.out.println(solution(10));
     }
 
-
     public static int solution(int number) {
         int sum = 0;
         for(int i=1; i < number; i++){

@@ -24,9 +24,7 @@ public class ValidBraces {
         char [] bracesArray = braces.toCharArray();
         for(char brace : bracesArray) {
             if(closings.containsKey(brace)) {
-                if(stack.peek() == closings.get(brace)
-                        || stack.peek() == closings.get(brace)
-                        || stack.peek() == closings.get(brace)) {
+                if(stack.peek() == closings.get(brace)) {
                     stack.pop();
                 } else {
                     stack.push(brace);
