@@ -13,7 +13,7 @@ public class BookJava8Chapter1{
 //        maxDouble();
 //        System.out.printf("%s", factorial(1000));
 //        System.out.printf("%d%n", randomFrom1to49());
-        trianglePascal(10);
+        trianglePascal(6);
     }
 
     public static String showBinary(int input){
