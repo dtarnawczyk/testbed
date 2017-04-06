@@ -9,7 +9,13 @@ repositories {
     mavenCentral()
 }
 
+task myTest() {
+    doLast {
+        println 'my test task'
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'lib', include: '*.jar')
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'junit', name: 'junit', version: '4.12'
 }
