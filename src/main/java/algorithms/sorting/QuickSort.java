@@ -12,15 +12,15 @@ import java.util.Arrays;
  * gdzie w pierwszej części znajdują się elementy nie większe od drugiej. Następnie każdą z tych podtablic
  * sortujemy osobno według tego samego schematu.
  */
-public class QuickSort {
+public class QuickSort implements Sort{
 
     public static void main(String[] args) {
         int[] unsorted = {9, 3, 5, 1, 6, 2, 4, 7, 8};
         QuickSort quickSort = new QuickSort();
-        System.out.println("Sorted: " + Arrays.toString(quickSort.quicksort(unsorted)));
+        System.out.println("Sorted: " + Arrays.toString(quickSort.sort(unsorted)));
     }
 
-    public int[] quicksort(int[] input) {
+    public int[] sort(int[] input) {
 
         sort(input, 0, input.length-1);
 

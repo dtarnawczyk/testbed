@@ -3,6 +3,8 @@ package algorithms.sorting;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -26,13 +28,13 @@ public class QuickSortTest {
 
     @Test
     public void testQuickSort() {
-        long startTime = System.currentTimeMillis();
+        Instant start = Instant.now();
 
         QuickSort quickSort = new QuickSort();
-        quickSort.quicksort(unsorted);
+        quickSort.sort(unsorted);
 
-        long stopTime = System.currentTimeMillis();
-        long elapsedTime = stopTime - startTime;
+        Instant end = Instant.now();
+        long elapsedTime = Duration.between(start, end).toMillis();
         System.out.println("Sorted: " + Arrays.toString(unsorted));
         System.out.println("QuickSort time: " + elapsedTime+" ms");
 

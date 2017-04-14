@@ -12,7 +12,7 @@ import java.util.Random;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class MergeSortTest {
+public class BubbleSortTest {
 
     private int [] unsorted;
     private static final int UNSORTED_SIZE = 555;
@@ -29,16 +29,16 @@ public class MergeSortTest {
     }
 
     @Test
-    public void testMergeSort() {
+    public void testBubbleSort() {
         Instant start = Instant.now();
 
-        MergeSort mergeSort = new MergeSort();
-        mergeSort.sort(unsorted);
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.sort(unsorted);
 
         Instant end = Instant.now();
         long elapsedTime = Duration.between(start, end).toMillis();
         System.out.println("Sorted: " + Arrays.toString(unsorted));
-        System.out.println("MergeSort time: " + elapsedTime+" ms");
+        System.out.println("BubbleSort time: " + elapsedTime+" ms");
 
         for(int i=0; i < unsorted.length-1; i++){
             if(unsorted[i] > unsorted[i+1]){

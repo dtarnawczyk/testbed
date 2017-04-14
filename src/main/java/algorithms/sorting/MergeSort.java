@@ -9,20 +9,20 @@ import java.util.Arrays;
  * 2. Zastosuj sortowanie przez scalanie dla każdej z części odzielnie, chyba że pozostał już tylko jeden element.
  * 3. Połącz posortowanie podciągi w jeden ciąg posortowany.
  */
-public class MergeSort {
+public class MergeSort implements Sort {
 
     public static void main(String[] args) {
         int [] unsorted = {9, 3, 5, 1, 6, 2, 4, 7, 8};
         MergeSort mergeSort = new MergeSort();
-        System.out.println("Sorted: "+ Arrays.toString(mergeSort.mergeSort(unsorted)));
+        System.out.println("Sorted: "+ Arrays.toString(mergeSort.sort(unsorted)));
     }
 
-    public int [] mergeSort(int [] array){
+    public int [] sort(int [] array){
         if(array.length > 1) {
             int [] firstHalf = Arrays.copyOfRange(array, 0, array.length/2);
             int [] secondHalf = Arrays.copyOfRange(array, (array.length/2), array.length);
-            mergeSort(firstHalf);
-            mergeSort(secondHalf);
+            sort(firstHalf);
+            sort(secondHalf);
             merge(array, firstHalf, secondHalf);
         }
         return array;

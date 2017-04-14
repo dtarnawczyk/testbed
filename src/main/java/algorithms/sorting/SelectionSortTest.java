@@ -1,6 +1,5 @@
 package algorithms.sorting;
 
-
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,8 +11,7 @@ import java.util.Random;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-public class MergeSortTest {
-
+public class SelectionSortTest {
     private int [] unsorted;
     private static final int UNSORTED_SIZE = 555;
     private static final int MAX_BOUND = 1500;
@@ -25,20 +23,20 @@ public class MergeSortTest {
         for (int i=0; i < UNSORTED_SIZE; i++) {
             unsorted[i] = rand.nextInt(MAX_BOUND);
         }
-        System.out.println("Unsorted: "+Arrays.toString(unsorted));
+        System.out.println("Unsorted: "+ Arrays.toString(unsorted));
     }
 
     @Test
-    public void testMergeSort() {
+    public void tesSelectionSort() {
         Instant start = Instant.now();
 
-        MergeSort mergeSort = new MergeSort();
-        mergeSort.sort(unsorted);
+        SelectionSort selectionSort = new SelectionSort();
+        selectionSort.sort(unsorted);
 
         Instant end = Instant.now();
         long elapsedTime = Duration.between(start, end).toMillis();
         System.out.println("Sorted: " + Arrays.toString(unsorted));
-        System.out.println("MergeSort time: " + elapsedTime+" ms");
+        System.out.println("SelectionSort time: " + elapsedTime+" ms");
 
         for(int i=0; i < unsorted.length-1; i++){
             if(unsorted[i] > unsorted[i+1]){
@@ -47,5 +45,4 @@ public class MergeSortTest {
         }
         assertTrue(true);
     }
-
 }
