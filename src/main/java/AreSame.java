@@ -1,7 +1,7 @@
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class AreSame {
 
@@ -12,7 +12,10 @@ public class AreSame {
 		a = new int[]{121, 144, 19, 161, 19, 144, 19, 11};
 		b = new int[]{132, 14641, 20736, 361, 25921, 361, 20736, 361};
 		
-						
+					Stream<Integer> stream = Stream.iterate(10, i -> i+1);
+					int first = stream.filter(integer -> integer < 10).findFirst().get();
+		System.out.println(first);
+
 		System.out.println(comp(a, b));
 	}
 	
