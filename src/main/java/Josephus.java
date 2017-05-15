@@ -6,19 +6,25 @@ public class Josephus {
 
     public static void main(String[] args) {
 
-        // Expected {3, 6, 2, 5, 1, 4, 7}
-        System.out.println(josephusPermutation(Arrays.asList(1,2,3,4,5,6,7), 3));
+//        // Expected {3, 6, 2, 5, 1, 4, 7}
+//        System.out.println(josephusPermutation(Arrays.asList(1,2,3,4,5,6,7), 3));
+//
+//        // Expected: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+//        System.out.println(
+//                josephusPermutation(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 1));
+//
+//        // Expected: {2, 4, 6, 8, 10, 3, 7, 1, 9, 5}
+//        System.out.println(
+//                josephusPermutation(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2));
+//
+//        System.out.println(
+//                josephusPermutation(Arrays.asList(), 2));
+//
+//        System.out.println(
+//                josephusPermutation(Arrays.asList(1), 2));
 
-        // Expected: {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
         System.out.println(
-                josephusPermutation(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 1));
-
-        // Expected: {2, 4, 6, 8, 10, 3, 7, 1, 9, 5}
-        System.out.println(
-                josephusPermutation(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10), 2));
-
-        System.out.println(
-                josephusPermutation(Arrays.asList(), 2));
+                josephusPermutation(Arrays.asList(1,2,3), 5));
 
     }
 
@@ -27,9 +33,15 @@ public class Josephus {
         List<T> input = new ArrayList<>(items);
         int size = input.size();
         if(size <= 0) return output;
+        if(size == 1) return items;
         boolean [] marked = new boolean[size];
         Arrays.fill(marked, Boolean.TRUE);
-        int n = k % size - 1;
+        int n;
+        if(k >= size) {
+            n = k % size;
+        } else {
+            n = k % size - 1;
+        }
         for(int i=0; i < items.size(); i++){
             output.add(input.get(n));
             marked[n] = Boolean.FALSE;
