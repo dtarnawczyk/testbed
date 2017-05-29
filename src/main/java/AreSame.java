@@ -17,7 +17,11 @@ public class AreSame {
 		System.out.println(first);
 
 		System.out.println(comp(a, b));
+
+
 	}
+
+
 	
 	public static boolean comp(int [] a, int [] b){
 		if (a == null || b == null) return false;
