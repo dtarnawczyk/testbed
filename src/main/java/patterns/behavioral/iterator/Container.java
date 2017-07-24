@@ -1,5 +1,5 @@
 package patterns.behavioral.iterator;
 
 public interface Container {
-    Iterator getIterator();
+    Iterator<Number> getIterator();
 }

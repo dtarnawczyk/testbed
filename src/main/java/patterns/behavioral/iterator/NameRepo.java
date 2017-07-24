@@ -4,11 +4,11 @@ public class NameRepo implements Container {
     public String names[] = {"Robert" , "John" ,"Julie" , "Lora"};
 
     @Override
-    public Iterator getIterator() {
+    public Iterator<Number> getIterator() {
         return new NameIterator();
     }
 
-    private class NameIterator implements Iterator {
+    private class NameIterator implements Iterator<Number> {
 
         int index;
 
