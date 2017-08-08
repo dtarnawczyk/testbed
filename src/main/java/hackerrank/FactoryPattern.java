@@ -1,4 +1,4 @@
-package codility;
+package hackerrank;
 
 import java.security.Permission;
 import java.util.Scanner;
