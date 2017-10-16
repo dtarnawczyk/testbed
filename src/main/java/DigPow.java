@@ -1,5 +1,9 @@
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.junit.Assert.assertEquals;
 
 public class DigPow {
 
@@ -27,7 +31,19 @@ public class DigPow {
 			p++;
 		}
 		long div = (sum/nSave);
-		return sum/nSave == 0 ? -1 : div; 
+		return sum % nSave == 0 ? -1 : div;
 	}
 
+	@Test
+	public void Test1() {
+		assertEquals(1, DigPow.digPow(89, 1));
+	}
+	@Test
+	public void Test2() {
+		assertEquals(-1, DigPow.digPow(92, 1));
+	}
+	@Test
+	public void Test3() {
+		assertEquals(51, DigPow.digPow(46288, 3));
+	}
 }
