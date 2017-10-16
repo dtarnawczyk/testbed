@@ -12,11 +12,19 @@ public class Dubstep {
 
     @Test
     public void Test1() {
-        assertEquals("ABC", new Dubstep().songDecoder("WUBWUBABCWUB"));
+        assertEquals("ABC", Dubstep.songDecoder("WUBWUBABCWUB"));
     }
+
     @Test
     public void Test2()
     {
-        assertEquals("R L", new Dubstep().songDecoder("RWUBWUBWUBLWUB"));
+        assertEquals("R L", Dubstep.songDecoder("RWUBWUBWUBLWUB"));
     }
+
+    @Test
+    public void Test3()
+    {
+        assertEquals("WE ARE THE CHAMPIONS MY FRIEND", Dubstep.songDecoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"));
+    }
+
 }
