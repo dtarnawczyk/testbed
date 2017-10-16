@@ -24,7 +24,7 @@ public class SortTwisted37 {
 //        return Arrays.stream(array)
 //                .map(SortTwisted37::swap37)
 //                .sorted(Integer::compare)
-//                .map(SortTwisted37::swap37)
+//                .map(SortTwisted37::swap37    )
 //                .toArray(Integer[]::new);
 //    }
 
